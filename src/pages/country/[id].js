@@ -66,20 +66,22 @@ const Country = ({ country }) => {
             <div className={styles.details_panel_row}>
               <div className={styles.details_panel_label}>Languages</div>
               <div className={styles.details_panel_value}>
-                {country.languages.map(({ name }) => name).join(", ")}
+                {country.languages?.map(({ name }) => name).join(", ")}
               </div>
             </div>
 
             <div className={styles.details_panel_row}>
               <div className={styles.details_panel_label}>Currencies</div>
               <div className={styles.details_panel_value}>
-                {country.currencies.map(({ name }) => name).join(", ")}
+                {country.currencies?.map(({ name }) => name).join(", ")}
               </div>
             </div>
 
             <div className={styles.details_panel_row}>
               <div className={styles.details_panel_label}>Gini</div>
-              <div className={styles.details_panel_value}>{country.gini} %</div>
+              <div className={styles.details_panel_value}>
+                {country.gini || 0} %
+              </div>
             </div>
 
             <div className={styles.details_panel_borders}>
@@ -118,3 +120,24 @@ export const getServerSideProps = async ({ params }) => {
     props: { country },
   };
 };
+
+/* export const getStaticPaths = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/all`);
+  const countries = await res.json();
+  const paths = countries.map(({ alpha3Code }) => ({
+    params: { id: alpha3Code },
+  }));
+
+  return {
+    paths: paths,
+    fallback: true,
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
+  const country = await getCountry(params.id);
+  return {
+    props: { country },
+    revalidate: 3600,
+  };
+}; */
