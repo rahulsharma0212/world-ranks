@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./CountriesTable.module.css";
+import Link from "next/link";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 
@@ -71,10 +72,12 @@ const CountriesTable = ({ countries }) => {
         </button>
       </div>
       {orderedCountries.map((country, i) => (
-        <div className={styles.row} key={i}>
-          <div className={styles.name}>{country.name}</div>
-          <div className={styles.population}>{country.population}</div>
-        </div>
+        <Link key={i} href={`/country/${country.alpha3Code}`}>
+          <div className={styles.row}>
+            <div className={styles.name}>{country.name}</div>
+            <div className={styles.population}>{country.population}</div>
+          </div>
+        </Link>
       ))}
     </div>
   );
