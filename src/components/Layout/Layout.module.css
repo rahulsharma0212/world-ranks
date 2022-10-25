@@ -19,3 +19,15 @@
   text-align: center;
   font-size: 0.75rem;
 }
+
+.themeSwitcher {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  color: var(--text-color-secondary);
+  margin-left: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

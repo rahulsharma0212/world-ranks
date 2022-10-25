@@ -90,8 +90,8 @@ const CountriesTable = ({ countries }) => {
           {value === "gini" && <SortArrow direction={direction} />}
         </button>
       </div>
-      {orderedCountries.map((country, i) => (
-        <Link key={i} href={`/country/${country.alpha3Code}`}>
+      {orderedCountries.map((country) => (
+        <Link key={country.name} href={`/country/${country.alpha3Code}`}>
           <div className={styles.row}>
             <div className={styles.flag}>
               <img src={country.flag} alt={country.name} />
