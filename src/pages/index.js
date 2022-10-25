@@ -7,7 +7,7 @@ export default function Home({ countries }) {
   return (
     <Layout>
       <div className={styles.count}>Found {countries.length} countries</div>
-      <SearchInput placeholder="filter by Name, Region or SubRegion" />
+      <SearchInput placeholder="Filter by Name, Region or SubRegion" />
       <CountriesTable countries={countries} />
     </Layout>
   );

@@ -40,7 +40,11 @@ const Layout = ({ children, title = "world Ranks" }) => {
 
       <footer className={styles.footer}>
         by Rahul Sharma{" "}
-        <a href="https://github.com/rahulsharma0212" target="blank">
+        <a
+          href="https://github.com/rahulsharma0212"
+          target="blank"
+          style={{ color: "#21b6b7" }}
+        >
           @rahulsharma0212
         </a>
       </footer>
