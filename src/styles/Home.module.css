@@ -2,3 +2,18 @@
   margin: 12px 0;
   color: var(--text-color-secondary);
 }
+
+@media screen and (min-width: 720px) {
+  .inputContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .count {
+    flex: 1;
+  }
+
+  .input {
+    flex: 2;
+  }
+}

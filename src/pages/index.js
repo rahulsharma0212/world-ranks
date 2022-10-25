@@ -20,18 +20,23 @@ export default function Home({ countries }) {
   };
   return (
     <Layout>
-      <div className={styles.count}>Found {countries.length} countries</div>
-      <SearchInput
-        placeholder="Filter by Name, Region or SubRegion"
-        onChange={onInputChange}
-      />
+      <div className={styles.inputContainer}>
+        <div className={styles.count}>Found {countries.length} countries</div>
+        <div className={styles.input}>
+          <SearchInput
+            placeholder="Filter by Name, Region or SubRegion"
+            onChange={onInputChange}
+          />
+        </div>
+      </div>
+
       <CountriesTable countries={filteredCountries} />
     </Layout>
   );
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/all`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/all`);
   const countries = await res.json();
   return {
     props: {
