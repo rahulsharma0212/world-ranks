@@ -111,15 +111,15 @@ const Country = ({ country }) => {
 
 export default Country;
 
-export const getServerSideProps = async ({ params }) => {
+/* export const getServerSideProps = async ({ params }) => {
   const country = await getCountry(params.id);
 
   return {
     props: { country },
   };
-};
+}; */
 
-/* export const getStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/all`);
   const countries = await res.json();
   const paths = countries.map(({ alpha3Code }) => ({
@@ -128,7 +128,7 @@ export const getServerSideProps = async ({ params }) => {
 
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
@@ -138,4 +138,4 @@ export const getStaticProps = async ({ params }) => {
     props: { country },
     revalidate: 3600,
   };
-}; */
+};
