@@ -1,8 +1,6 @@
 import Layout from "../../components/Layout/Layout";
-import Image from "next/image";
 import styles from "./Country.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const getCountry = async (id) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/alpha/${id}`);
