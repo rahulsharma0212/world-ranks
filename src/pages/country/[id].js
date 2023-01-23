@@ -23,6 +23,7 @@ const Country = ({ country }) => {
 
   return (
     <Layout title={country.name}>
+      {console.log(country)}
       <div className={styles.container}>
         <div className={styles.container_left}>
           <div className={styles.overviewPanel}>
